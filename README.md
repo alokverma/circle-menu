@@ -1,7 +1,7 @@
 # circle-menu
 This is a view group in which you can pass list of menu items and those items will be drawn under circular path.
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![license](https://img.shields.io/github/license/DAVFoundation/captain-n3m0.svg?style=flat-square)](https://github.com/DAVFoundation/captain-n3m0/blob/master/LICENSE)
 
 
 # Sample Apk
