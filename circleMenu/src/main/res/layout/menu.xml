@@ -4,12 +4,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-<!--    <Button-->
-<!--        android:id="@+id/ring_view"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="match_parent"-->
-<!--        android:layout_gravity="center" />-->
-
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/circle_menu_main_button"
         android:layout_width="wrap_content"
