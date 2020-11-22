@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="@color/white"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <com.akki.circlemenu.CircleMenu
+        android:id="@+id/circle_menu"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:menu_background_color="@array/menu_back_colors"
+        app:menu_close_duration="300"
+        app:menu_icons="@array/menus"
+        app:menu_open_duration="400"
+        app:menu_radius="100dp">
+
+    </com.akki.circlemenu.CircleMenu>
+
+</LinearLayout>

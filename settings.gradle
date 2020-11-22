@@ -1,0 +1,4 @@
+include ':circleMenu'
+include ':app:circlemenu'
+include ':app'
+rootProject.name = "CircleMenuSample"

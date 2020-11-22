@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="CircleMenu">
+        <!-- Array of menu buttons-->
+        <attr name="menu_icons" format="reference" />
+        <!-- Array of menu Item Ids -->
+        <attr name="menu_item_ids" format="reference" />
+        <!-- Array of menu background colors -->
+        <attr name="menu_background_color" format="reference" />
+        <attr name="menu_radius" format="dimension" />
+        <attr name="menu_open_duration" format="integer" />
+        <attr name="menu_close_duration" format="integer" />
+    </declare-styleable>
+</resources>
