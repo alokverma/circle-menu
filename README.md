@@ -1,6 +1,8 @@
 # circle-menu
 This is a view group in which you can pass list of menu items and those items will be drawn under circular path.
 
+
+
 # Sample Apk
 
 https://github.com/alokverma/circle-menu/blob/main/app/apk/app-debug.apk
@@ -63,5 +65,3 @@ If you like my work, please give it a star and let me know if you facing any que
 [![Linkedin](https://i.stack.imgur.com/gVE0j.png) LinkedIn](https://www.linkedin.com/in/alok-verma-73882666/)
 &nbsp;
 
-   
-   
