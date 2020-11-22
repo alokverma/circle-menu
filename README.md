@@ -50,7 +50,7 @@ Step 2. Add the dependency
           app:menu_open_duration="400"
           app:menu_radius="100dp">
         
-  # Attributes that you can use to customize this view group
+# Attributes that you can use to customize this view group
       app:menu_icons = arrays of vector/png menu items
       app:menu_background_color = array of background tint for those menus
       app:menu_open_duration = open animation duration of circle
@@ -58,11 +58,21 @@ Step 2. Add the dependency
       app:menu_radius= radius of circle
       
    In your activity/fragment, you can pass setOnMenuItemClickListener and you can get all menu item click event in onMenuItemClicked function.
+   
+      CircleMenu.setOnMenuItemClickListener(this)
+      override fun onMenuItemClicked(id: Int) {
+        when (id) {
+            R.drawable.ic_baseline_delete_forever_24 -> showToast("Delete Button clicked")
+            R.drawable.ic_baseline_person_search_24 -> showToast("Person Button clicked")
+            R.drawable.ic_baseline_settings_24 -> showToast("Setting Button clicked")
+            R.drawable.ic_baseline_edit_location_24 -> showToast("Location Button clicked")
+        }
+    }
+    
 
-
-If you like my work, please give it a star and let me know if you facing any query while implementing this.
 
 # You can connect me at
 [![Linkedin](https://i.stack.imgur.com/gVE0j.png) LinkedIn](https://www.linkedin.com/in/alok-verma-73882666/)
 &nbsp;
 
+If you like my work, please give it a star and let me know if you facing any query while implementing this.
