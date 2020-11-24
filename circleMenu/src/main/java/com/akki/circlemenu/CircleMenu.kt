@@ -5,6 +5,7 @@ import android.content.Context
 import android.content.res.ColorStateList
 import android.graphics.Color
 import android.util.AttributeSet
+import android.view.Gravity
 import android.view.LayoutInflater
 import android.view.View
 import android.view.animation.OvershootInterpolator
@@ -28,6 +29,7 @@ class CircleMenu : FrameLayout, View.OnClickListener {
     private var mOpenAnimationDuration: Int
     private var mCloseAnimationDuration: Int
     private var onCircleMenuItemClicked: OnCircleMenuItemClicked? = null
+    private var mOrientation: Int? = null
 
 
     constructor(context: Context) : this(context, null)
@@ -42,6 +44,9 @@ class CircleMenu : FrameLayout, View.OnClickListener {
         try {
             val iconArrayId = ta.getResourceId(R.styleable.CircleMenu_menu_icons, 0)
             val iconBgColorId = ta.getResourceId(R.styleable.CircleMenu_menu_background_color, 0)
+            if (ta.hasValue(R.styleable.CircleMenu_menu_orientation)) {
+                mOrientation = ta.getInt(R.styleable.CircleMenu_menu_orientation, 0)
+            }
             val colorId = resources.obtainTypedArray(iconBgColorId)
             val density = context.resources.displayMetrics.density
             val defaultRadius: Float = MENU_DEFAULT_SIZE * density
@@ -50,6 +55,7 @@ class CircleMenu : FrameLayout, View.OnClickListener {
             mOpenAnimationDuration = ta.getInteger(R.styleable.CircleMenu_menu_open_duration, 500)
             mCloseAnimationDuration =
                 ta.getInteger(R.styleable.CircleMenu_menu_close_duration, 500)
+
             val iconsIds = resources.obtainTypedArray(iconArrayId)
             try {
                 menuItems = ArrayList(iconsIds.length())
@@ -100,6 +106,20 @@ class CircleMenu : FrameLayout, View.OnClickListener {
             } else
                 closeAnimation()
         }
+
+        if (mOrientation == 1) {
+            val lp = LayoutParams(
+                LayoutParams.WRAP_CONTENT,
+                LayoutParams.WRAP_CONTENT,
+                Gravity.BOTTOM
+            )
+            menuCenterButton.layoutParams = lp
+        } else {
+            val lp =
+                LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT, Gravity.CENTER)
+            lp.gravity = Gravity.CENTER
+            menuCenterButton.layoutParams = lp
+        }
         setWillNotDraw(true)
         clipChildren = false
         clipToPadding = false
@@ -132,23 +152,36 @@ class CircleMenu : FrameLayout, View.OnClickListener {
             }
 
         })
-        menuDisplayAnimation.addUpdateListener {
-            var i = 0
-            for (view in mButtons) {
-                val angle = angleStep * i - 90
-                val x: Float =
-                    cos(Math.toRadians(angle.toDouble())).toFloat() * it.animatedValue as Float
-                val y: Float =
-                    sin(Math.toRadians(angle.toDouble())).toFloat() * it.animatedValue as Float
-                view.x = centerX + x
-                view.y = centerY + y
-                view.scaleX = 1.0f * it.animatedFraction
-                view.scaleY = 1.0f * it.animatedFraction
-                i += 1
+        if (mOrientation == 1) {
+            menuDisplayAnimation.addUpdateListener {
+                var i = 1
+                for (view in mButtons) {
+                    val y = (it.animatedValue as Float * i) / 1.2
+                    view.x = centerX
+                    view.y = (centerY - y).toFloat()
+                    view.scaleX = 1.0f * it.animatedFraction
+                    view.scaleY = 1.0f * it.animatedFraction
+                    i += 1
+                }
+            }
+        } else {
+            menuDisplayAnimation.addUpdateListener {
+                var i = 0
+                for (view in mButtons) {
+                    val angle = angleStep * i - 90
+                    val x: Float =
+                        cos(Math.toRadians(angle.toDouble())).toFloat() * it.animatedValue as Float
+                    val y: Float =
+                        sin(Math.toRadians(angle.toDouble())).toFloat() * it.animatedValue as Float
+                    view.x = centerX + x
+                    view.y = centerY + y
+                    view.scaleX = 1.0f * it.animatedFraction
+                    view.scaleY = 1.0f * it.animatedFraction
+                    i += 1
+                }
             }
         }
         menuDisplayAnimation.interpolator = OvershootInterpolator()
-
         val animatorSet = AnimatorSet()
         animatorSet.playTogether(alphaAnimation, menuDisplayAnimation)
         animatorSet.duration = mOpenAnimationDuration.toLong()
@@ -176,28 +209,44 @@ class CircleMenu : FrameLayout, View.OnClickListener {
 
         val buttonsCount: Int = mButtons.size
         val angleStep = 360f / buttonsCount
-        val mCloseAnimation = ValueAnimator.ofFloat(mRadius, 1f)
+        val mCloseAnimation = ValueAnimator.ofFloat(mRadius, 0f)
 
         val alphaAnimation = ObjectAnimator.ofFloat(
             menuCenterButton,
             "alpha",
             1.0f
         )
-        mCloseAnimation.addUpdateListener {
-            var i = 0
-            for (view in mButtons) {
-                val angle = angleStep * i - 90
-                val x: Float =
-                    cos(Math.toRadians(angle.toDouble())).toFloat() * it.animatedValue as Float
-                val y: Float =
-                    sin(Math.toRadians(angle.toDouble())).toFloat() * it.animatedValue as Float
-                view.x = centerX + x
-                view.y = centerY + y
-                view.scaleX = 1.0f * 1
-                view.scaleY = 1.0f * 1
-                i += 1
+        if (mOrientation == 1) {
+            mCloseAnimation.addUpdateListener {
+                var i = 1
+                for (view in mButtons) {
+                    // val angle = angleStep * i - 90
+                    val y = (it.animatedValue as Float * i) / 1.2
+                    view.x = centerX
+                    view.y = (centerY-y).toFloat()
+                    view.scaleX = 1.0f * 1
+                    view.scaleY = 1.0f * 1
+                    i += 1
+                }
+            }
+        } else {
+            mCloseAnimation.addUpdateListener {
+                var i = 0
+                for (view in mButtons) {
+                    val angle = angleStep * i - 90
+                    val x: Float =
+                        cos(Math.toRadians(angle.toDouble())).toFloat() * it.animatedValue as Float
+                    val y: Float =
+                        sin(Math.toRadians(angle.toDouble())).toFloat() * it.animatedValue as Float
+                    view.x = centerX + x
+                    view.y = centerY + y
+                    view.scaleX = 1.0f * 1
+                    view.scaleY = 1.0f * 1
+                    i += 1
+                }
             }
         }
+
         mCloseAnimation.addListener(object : AnimatorListenerAdapter() {
             override fun onAnimationStart(animation: Animator) {
             }
@@ -230,12 +279,12 @@ class CircleMenu : FrameLayout, View.OnClickListener {
         })
     }
 
-    override fun onMeasure(widthMeasureSpec: Int, heightMeasureSpec: Int) {
-        super.onMeasure(widthMeasureSpec, heightMeasureSpec)
-        val w = View.resolveSizeAndState(1000, widthMeasureSpec, 0)
-        val h = View.resolveSizeAndState(1000, heightMeasureSpec, 0)
-        setMeasuredDimension(w, h)
-    }
+//    override fun onMeasure(widthMeasureSpec: Int, heightMeasureSpec: Int) {
+//        super.onMeasure(widthMeasureSpec, heightMeasureSpec)
+//        val w = View.resolveSizeAndState(2000, widthMeasureSpec, 0)
+//        val h = View.resolveSizeAndState(2000, heightMeasureSpec, 0)
+//        setMeasuredDimension(w, h)
+//    }
 
     override fun onClick(v: View?) {
         closeAnimation()

@@ -10,5 +10,9 @@
         <attr name="menu_radius" format="dimension" />
         <attr name="menu_open_duration" format="integer" />
         <attr name="menu_close_duration" format="integer" />
+        <attr name="menu_orientation" format="enum">
+            <enum name="circle" value="0" />
+            <enum name="vertical" value="1" />
+        </attr>
     </declare-styleable>
 </resources>

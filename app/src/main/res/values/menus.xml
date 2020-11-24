@@ -5,7 +5,6 @@
         <item>@drawable/ic_baseline_settings_24</item>
         <item>@drawable/ic_baseline_delete_forever_24</item>
         <item>@drawable/ic_baseline_person_search_24</item>
-        <item>@drawable/ic_baseline_settings_24</item>
     </array>
 
     <array name="menu_back_colors">
@@ -13,7 +12,6 @@
         <item>@android:color/holo_green_dark</item>
         <item>@android:color/holo_red_light</item>
         <item>@android:color/holo_purple</item>
-        <item>@android:color/holo_orange_light</item>
 
     </array>
 
