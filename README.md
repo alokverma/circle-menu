@@ -9,8 +9,7 @@ https://github.com/alokverma/circle-menu/blob/main/app/apk/app-debug.apk
 
 # Demo 
   <p align="center">
-  <img src="https://user-images.githubusercontent.com/7018540/99903342-c475f900-2ce9-11eb-81f6-a62fa9e742ab.gif" width="350" title="Circle Menu">
-  
+  <img src="https://user-images.githubusercontent.com/7018540/100072143-e1cdd300-2e61-11eb-8389-7f989ba866a6.gif" width="350" title="vertical Menu">
   <img src="https://user-images.githubusercontent.com/7018540/99903389-13239300-2cea-11eb-9890-7e128c2d7947.gif" width="350" title="Circle Menu">
   </p>
 
@@ -47,6 +46,7 @@ Step 2. Add the dependency
           app:menu_close_duration="300"
           app:menu_icons="@array/menus"
           app:menu_open_duration="400"
+	  app:menu_orientation="circle"
           app:menu_radius="100dp">
         
 # Attributes that you can use to customize this view group
@@ -55,6 +55,7 @@ Step 2. Add the dependency
       app:menu_open_duration = open animation duration of circle
       app:menu_close_duration = close animation duration of circle
       app:menu_radius= radius of circle
+      app:menu_orientation="circle|vertical"
       
    In your activity/fragment, you can pass setOnMenuItemClickListener and you can get all menu item click event in onMenuItemClicked function.
    
