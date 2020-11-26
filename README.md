@@ -9,9 +9,10 @@ https://github.com/alokverma/circle-menu/blob/main/app/apk/app-debug.apk
 
 # Demo 
   <p align="center">
-  <img src="https://user-images.githubusercontent.com/7018540/99903342-c475f900-2ce9-11eb-81f6-a62fa9e742ab.gif" width="350" title="Circle Menu">
-  
-  <img src="https://user-images.githubusercontent.com/7018540/99903389-13239300-2cea-11eb-9890-7e128c2d7947.gif" width="350" title="Circle Menu">
+  <img src="https://user-images.githubusercontent.com/7018540/100072143-e1cdd300-2e61-11eb-8389-7f989ba866a6.gif" width="200" title="vertical Menu"/>
+  <img src="https://user-images.githubusercontent.com/7018540/99903389-13239300-2cea-11eb-9890-7e128c2d7947.gif" width="200" title="Circle Menu"/>
+  <img src="https://user-images.githubusercontent.com/7018540/100340890-d9140300-3001-11eb-8115-c1d929cfcbbd.gif" width="200" title="arc_menu"/>
+  <img src="https://user-images.githubusercontent.com/7018540/100340908-e03b1100-3001-11eb-8293-0c7e1e486fcd.gif" width="200" title="half_circle"/>
   </p>
 
 
@@ -34,7 +35,7 @@ Add it in your root build.gradle at the end of repositories:
 Step 2. Add the dependency
 
 	dependencies {
-	        implementation 'com.github.alokverma:circle-menu:1.0'
+	        implementation 'com.github.alokverma:circle-menu:1.1'
 	}
 
 # Code 
@@ -47,6 +48,7 @@ Step 2. Add the dependency
           app:menu_close_duration="300"
           app:menu_icons="@array/menus"
           app:menu_open_duration="400"
+	  app:menu_orientation="circle"
           app:menu_radius="100dp">
         
 # Attributes that you can use to customize this view group
@@ -55,6 +57,7 @@ Step 2. Add the dependency
       app:menu_open_duration = open animation duration of circle
       app:menu_close_duration = close animation duration of circle
       app:menu_radius= radius of circle
+      app:menu_orientation="circle|vertical|half_circle|arc_left|arc_right"
       
    In your activity/fragment, you can pass setOnMenuItemClickListener and you can get all menu item click event in onMenuItemClicked function.
    
