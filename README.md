@@ -9,10 +9,10 @@ https://github.com/alokverma/circle-menu/blob/main/app/apk/app-debug.apk
 
 # Demo 
   <p align="center">
-  <img src="https://user-images.githubusercontent.com/7018540/100072143-e1cdd300-2e61-11eb-8389-7f989ba866a6.gif" width="350" title="vertical Menu">
-  <img src="https://user-images.githubusercontent.com/7018540/99903389-13239300-2cea-11eb-9890-7e128c2d7947.gif" width="350" title="Circle Menu">
-  <img src="https://user-images.githubusercontent.com/7018540/100340890-d9140300-3001-11eb-8115-c1d929cfcbbd.gif" width="350" title="arc_menu">
-  <img src="https://user-images.githubusercontent.com/7018540/100340908-e03b1100-3001-11eb-8293-0c7e1e486fcd.gif" width="350" title="half_circle
+  <img src="https://user-images.githubusercontent.com/7018540/100072143-e1cdd300-2e61-11eb-8389-7f989ba866a6.gif" width="200" title="vertical Menu"/>
+  <img src="https://user-images.githubusercontent.com/7018540/99903389-13239300-2cea-11eb-9890-7e128c2d7947.gif" width="200" title="Circle Menu"/>
+  <img src="https://user-images.githubusercontent.com/7018540/100340890-d9140300-3001-11eb-8115-c1d929cfcbbd.gif" width="200" title="arc_menu"/>
+  <img src="https://user-images.githubusercontent.com/7018540/100340908-e03b1100-3001-11eb-8293-0c7e1e486fcd.gif" width="200" title="half_circle"/>
   </p>
 
 
