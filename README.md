@@ -11,6 +11,8 @@ https://github.com/alokverma/circle-menu/blob/main/app/apk/app-debug.apk
   <p align="center">
   <img src="https://user-images.githubusercontent.com/7018540/100072143-e1cdd300-2e61-11eb-8389-7f989ba866a6.gif" width="350" title="vertical Menu">
   <img src="https://user-images.githubusercontent.com/7018540/99903389-13239300-2cea-11eb-9890-7e128c2d7947.gif" width="350" title="Circle Menu">
+  <img src="https://user-images.githubusercontent.com/7018540/100340890-d9140300-3001-11eb-8115-c1d929cfcbbd.gif" width="350" title="arc_menu">
+  <img src="https://user-images.githubusercontent.com/7018540/100340908-e03b1100-3001-11eb-8293-0c7e1e486fcd.gif" width="350" title="half_circle
   </p>
 
 
@@ -55,7 +57,7 @@ Step 2. Add the dependency
       app:menu_open_duration = open animation duration of circle
       app:menu_close_duration = close animation duration of circle
       app:menu_radius= radius of circle
-      app:menu_orientation="circle|vertical"
+      app:menu_orientation="circle|vertical|half_circle|arc_left|arc_right"
       
    In your activity/fragment, you can pass setOnMenuItemClickListener and you can get all menu item click event in onMenuItemClicked function.
    
