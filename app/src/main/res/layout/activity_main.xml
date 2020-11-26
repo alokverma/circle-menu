@@ -5,22 +5,54 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
+    android:padding="5dp"
     tools:context=".MainActivity">
 
     <com.akki.circlemenu.CircleMenu
         android:id="@+id/circle_menu"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentRight="true"
-        android:layout_width="wrap_content"
+        android:layout_width="500dp"
         android:layout_height="match_parent"
         android:padding="10dp"
         app:menu_background_color="@array/menu_back_colors"
         app:menu_close_duration="300"
         app:menu_icons="@array/menus"
         app:menu_open_duration="400"
-        app:menu_orientation="vertical"
-        app:menu_radius="80dp">
+        app:menu_orientation="half_circle"
+        app:menu_radius="80dp" />
 
-    </com.akki.circlemenu.CircleMenu>
+<!--    <com.akki.circlemenu.CircleMenu-->
+<!--        android:id="@+id/circle_menu1"-->
+<!--        android:layout_width="400dp"-->
+<!--        android:layout_height="match_parent"-->
+<!--        app:menu_background_color="@array/menu_back_colors"-->
+<!--        app:menu_close_duration="300"-->
+<!--        app:menu_icons="@array/menus"-->
+<!--        app:menu_open_duration="400"-->
+<!--        app:menu_orientation="circle"-->
+<!--        app:menu_radius="80dp" />-->
+
+<!--    <com.akki.circlemenu.CircleMenu-->
+<!--        android:id="@+id/circle_menu2"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent"-->
+<!--        app:menu_background_color="@array/menu_back_colors"-->
+<!--        app:menu_close_duration="300"-->
+<!--        app:menu_icons="@array/menus"-->
+<!--        app:menu_open_duration="400"-->
+<!--        app:menu_orientation="arc_right"-->
+<!--        app:menu_radius="150dp" />-->
+
+<!--    <com.akki.circlemenu.CircleMenu-->
+<!--        android:id="@+id/circle_menu3"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent"-->
+<!--        app:menu_background_color="@array/menu_back_colors"-->
+<!--        app:menu_close_duration="300"-->
+<!--        app:menu_icons="@array/menus"-->
+<!--        app:menu_open_duration="400"-->
+<!--        app:menu_orientation="arc_left"-->
+<!--        app:menu_radius="150dp">-->
+
+<!--    </com.akki.circlemenu.CircleMenu>-->
 
 </RelativeLayout>

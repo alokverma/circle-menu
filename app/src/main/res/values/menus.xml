@@ -12,17 +12,6 @@
         <item>@android:color/holo_green_dark</item>
         <item>@android:color/holo_red_light</item>
         <item>@android:color/holo_purple</item>
-
     </array>
 
-    <array name="menu_ids">
-        <item></item>
-        <item>1</item>
-        <item>@android:color/holo_red_light</item>
-        <item>@android:color/holo_purple</item>
-        <item>@android:color/holo_orange_light</item>
-        <item>@android:color/holo_blue_light</item>
-        <item>@android:color/holo_red_light</item>
-
-    </array>
 </resources>

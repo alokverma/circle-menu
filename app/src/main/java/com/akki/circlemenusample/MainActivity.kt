@@ -11,9 +11,9 @@ class MainActivity : AppCompatActivity(), OnCircleMenuItemClicked {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val CircleMenu = findViewById<CircleMenu>(R.id.circle_menu)
+      //  val CircleMenu = findViewById<CircleMenu>(R.id.circle_menu)
 
-        CircleMenu.setOnMenuItemClickListener(this)
+       // CircleMenu.setOnMenuItemClickListener(this)
     }
 
     override fun onMenuItemClicked(id: Int) {
